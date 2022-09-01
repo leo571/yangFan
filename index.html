@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>暘帆驿站</title>
+    <style>
+      body {
+        /* 外边距归零 */
+        margin: 0;
+        /* 高度100vh vh: 是view height 表示浏览器试图高度 100是百分比  */
+        height: 100vh;
+        /* 背景颜色设置 */
+        background: rgb(197, 194, 214);
+      }
+      /* 添加阴影 */
+      .yinYing {
+        box-shadow: rgb(0 0 0 / 20%) 0px 2px 1px -1px,
+          rgb(0 0 0 / 14%) 0px 1px 1px 0px, rgb(0 0 0 / 12%) 0px 1px 3px 0px;
+      }
+      /* 给布局添加一个1px的边框，布局技巧给布局加上边框方便更直观的看到，后期可取消 */
+      /* * {
+        border: 1px solid black;
+      } */
+      /* 定义一个弹性盒子标签 */
+      .flex {
+        display: flex;
+      }
+      /* 定义一个颜色为白色的标签 */
+      .baiSe {
+        background-color: rgb(94, 92, 110);
+      }
+      /* 定义一个颜色为白色2的标签 */
+      .baiSe3 {
+        background-color: rgba(129, 123, 148, 0.952);
+      }
+      /* 定义一个颜色为白色3的标签 */
+      .baiSe2 {
+        background-color: #777e91f0;
+      }
+      /* 定义一个占满全部区域的属性 */
+      .flex1 {
+        flex: 1;
+      }
+      /* 定义一个竖向排列的标签 flex-direction 表示排列方向*/
+      .column {
+        flex-direction: column;
+      }
+      /* 添加边距为8px的标签 */
+      .mg8 {
+        margin: 8px;
+      }
+      .mgr8 {
+        margin-right: 8px;
+      }
+      .mgt8 {
+        margin-top: 8px;
+      }
+      .daoHang {
+        padding: 10px 20px;
+        border-bottom: 1px solid rgb(151, 122, 122);
+        font-size: 14px;
+        color: rgb(158, 241, 33);
+      }
+      /* 标题左右居中 */
+      .biaoTi {
+        text-align: center;
+      }
+      /* 文字上下行高 */
+      .wenZis {
+        line-height: 50px;
+      }
+      /* 文字上下行高 */
+      .wenZisZ {
+        line-height: 25px;
+      }
+      /* 设置导航栏的搜索框样式 */
+      .topnav input[type="text"] {
+        float: right;
+        padding: 8px;
+        border: none;
+        margin-top: 12px;
+        margin-right: 100px;
+        font-size: 17px;
+        border-radius: 5px;
+      }
+      /* 当显示器小于800px时 */
+      @media (max-width: 800px) {
+        /* 隐藏侧边栏 */
+        .ceBian {
+          display: none;
+        }
+        /* 改为竖向展示 */
+        .neiRong {
+          flex-direction: column;
+        }
+        /* 数据区竖向展示 */
+        .shuJuQu {
+          flex-direction: column;
+        }
+        /* 右区边距对齐设置为8px */
+        .youQu {
+          margin-left: 8px;
+        }
+        /* 数据块的边距和占距 */
+        .shuJu {
+          margin: 0 0 8px;
+          flex: auto;
+        }
+        /* 滚动条样式 */
+        .neiRong::-webkit-scrollbar {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body class="flex">
+    <!-- 侧边栏 -->
+    <div style="width: 200px; z-index: 2" class="ceBian baiSe yinYing">
+      <!-- 头像栏 -->
+      <div
+        style="
+          padding: 10px;
+          align-items: center;
+          justify-content: center;
+          border-bottom: 1px solid rgb(151, 122, 122);
+        "
+        class="flex"
+      >
+        <img src="R-A.png " width="40px" height="40px" alt="" />
+        <div style="margin-left: 10px; color: rgb(223, 223, 27)">暘帆</div>
+      </div>
+      <!-- 导航栏 -->
+      <div class="flex1">
+        <a
+          href="http://127.0.0.1:3000/d:/wzqdkfxx/9.1/hezilianxi.html"
+          style="text-decoration: none"
+          ><div class="daoHang">首页</div></a
+        >
+        <a
+          href="http://127.0.0.1:3000/d:/wzqdkfxx/9.1/shiGuangDaox/shiGuangDaox.html"
+          style="text-decoration: none"
+          ><div class="daoHang">时光倒叙</div></a
+        >
+        <a
+          href="http://127.0.0.1:3000/d:/wzqdkfxx/9.1/baiJiaZhengm/baiJiaZhengm.html"
+          style="text-decoration: none"
+          ><div class="daoHang">百家争鸣</div></a
+        >
+        <a
+          href="http://127.0.0.1:3000/d:/wzqdkfxx/9.1/sheJiaoGuanl/sheJiaoGuanl.html"
+          style="text-decoration: none"
+          ><div class="daoHang">社交管理</div></a
+        >
+        <a
+          href="http://127.0.0.1:3000/d:/wzqdkfxx/9.1/siWeiMoX/siWeiMox.html"
+          style="text-decoration: none"
+          ><div class="daoHang">思维模型</div></a
+        >
+        <a
+          href="http://127.0.0.1:3000/d:/wzqdkfxx/9.1/biaoGeXiaZai/biaoGeXiaZ.html"
+          style="text-decoration: none"
+          ><div class="daoHang">表格下载</div></a
+        >
+        <a
+          href="http://127.0.0.1:3000/d:/wzqdkfxx/9.1/liuYanBan/liuYanBan.html"
+          style="text-decoration: none"
+          ><div class="daoHang">留言板</div></a
+        >
+        <a
+          href="http://127.0.0.1:3000/d:/wzqdkfxx/9.1/guanYuyangfan/guanYu.html"
+          style="text-decoration: none"
+          ><div class="daoHang">关于暘帆</div></a
+        >
+      </div>
+    </div>
+    <!-- 主区域 -->
+    <div class="flex1 flex column">
+      <!-- 头部栏 -->
+      <div style="height: 60px; z-index: 1" class="baiSe yinYing">
+        <div class="topnav">
+          <input
+            type="text"
+            id="i-advanced-search"
+            placeholder="欢迎加入元岛小程序学习~~"
+          />
+        </div>
+      </div>
+      <!-- 内容区 -->
+      <div style="overflow: auto" class="flex1 flex neiRong">
+        <!-- 左区 -->
+        <br />
+        <div style="flex: 3" class="flex column mg8">
+          <!-- 数据区 -->
+          <br />
+          <div class="flex shuJuQu">
+            <!-- 数据块 -->
+
+            <div
+              style="height: 200px; border-radius: 2px"
+              class="shuJu flex1 baiSe2 mgr8 yinYing"
+            >
+              <h2 style="color: rgb(70, 71, 68)" class="biaoTi">
+                远期目标管理
+              </h2>
+              <li style="color: rgb(70, 71, 68); text-indent: 1em">
+                你是谁 ，从哪里来 ，要去哪里 。
+              </li>
+              <li style="color: rgb(70, 71, 68); text-indent: 1em">
+                感兴趣 ，热爱 ，心向往之 。
+              </li>
+              <li style="color: rgb(70, 71, 68); text-indent: 1em">
+                利他思维 ，
+              </li>
+            </div>
+            <div
+              style="height: 200px; border-radius: 2px"
+              class="shuJu flex1 baiSe2 mgr8 yinYing"
+            >
+              <h2 style="color: rgb(70, 71, 68)" class="biaoTi">中期目标</h2>
+
+              <li style="color: rgb(70, 71, 68); text-indent: 1em">
+                服务于长期目标 。
+              </li>
+              <li style="color: rgb(70, 71, 68); text-indent: 1em">
+                计划用时 。
+              </li>
+            </div>
+            <div
+              style="height: 200px; border-radius: 2px"
+              class="shuJu flex1 baiSe2 yinYing"
+            >
+              <h2 style="color: rgb(70, 71, 68)" class="biaoTi">
+                近期目标截至时间
+              </h2>
+              <li style="color: rgb(70, 71, 68); text-indent: 1em">
+                服务于中期目标
+              </li>
+              <li style="color: rgb(70, 71, 68); text-indent: 1em">
+                哪些因素有利于达成目标
+              </li>
+              <li style="color: rgb(70, 71, 68); text-indent: 1em">
+                少做无用功
+              </li>
+            </div>
+          </div>
+          <!-- 列表区 -->
+          <div class="flex column">
+            <!-- 列表项 -->
+            <br />
+            <div
+              style="height: 200px; border-radius: 2px; padding: 10px"
+              class="baiSe3 mgt8 yinYing flex wenZisZ"
+            >
+              <p>
+                <img
+                  width="350px"
+                  ;
+                  height="170px"
+                  src="lieBiao.png"
+                  alt="xingkong"
+                />
+              </p>
+              <p style="color: rgb(70, 71, 68); text-indent: 2em">
+                1，关于金钱和影响力，是你所做的贡献的等值回报
+                用贡献换取回报，贡献越大回报就越大。也可以把它看作是一种媒介用它来调动你可用的资源，这些资源可能是物质的也可能是劳动力
+                或者人脉。一个人想要更多的钱就需要让自己在单位时间内做出的贡献更大。这些贡献在商业社会里就会以钱来量化。
+              </p>
+            </div>
+            <div
+              style="height: 275px; border-radius: 2px; padding: 10px"
+              class="baiSe3 mgt8 yinYing flex wenZisZ"
+            >
+              <p>
+                <img
+                  width="350px"
+                  ;
+                  height="200px"
+                  src="lieBiao1.png"
+                  alt="xingkong"
+                />
+              </p>
+              <p style="color: rgb(70, 71, 68); text-indent: 2em">
+                1，关于学习和工作。人从一开始就爱上学习和工作是一个极小概率的事件，因为你不知道什么是自己感兴趣的工作，其次喜欢的工作岗位和实际工作内容和你想象的出入很大。重复和缺少新鲜感会让你觉得乏味。这就意味着因为热爱而沉迷这件事情几乎不可能自然而然的发生。但因为沉迷而热爱就一定会发生，它是基于正反馈原理，不管喜不喜欢先投入其中埋头苦干自然会有成果，有了成果自然回收到正反馈，有了正反馈自然就会更有兴趣和信心去投入工作从而形成正向循环，久而久之你就会爱上它，即便它平淡无奇，所以通过努力获得正反馈比工作内容是否有趣要重要。
+              </p>
+            </div>
+            <div
+              style="height: 200px; border-radius: 2px; padding: 10px"
+              class="baiSe3 mgt8 yinYing flex wenZisZ"
+            >
+              <p>
+                <img
+                  width="350px"
+                  ;
+                  height="170px"
+                  src="lieBiao2.png"
+                  alt="xingkong"
+                />
+              </p>
+              <p style="color: rgb(70, 71, 68); text-indent: 2em">
+                1，关于兴趣爱好，是平淡生活的调节剂，为我们的生活增添姿彩。不要为了完成工作而放弃了自己的兴趣爱好。也不要为了兴趣爱好而失去对工作的要求。两者应该是相辅相成的关系。
+              </p>
+            </div>
+            <div
+              style="height: 200px; border-radius: 2px; padding: 10px"
+              class="baiSe3 mgt8 yinYing flex wenZisZ"
+            >
+              <p>
+                <img
+                  width="350px"
+                  ;
+                  height="170px"
+                  src="lieBiao3.png"
+                  alt="xingkong"
+                />
+              </p>
+              <p style="color: rgb(70, 71, 68); text-indent: 2em">
+                1，关于静坐和冥想
+                让心静下来，只有抛去杂念人生中哪些重要的东西才能显现出来。遵从自己的内心，用理性指导感性。积极主动的拥抱这个世界，方能拨开云雾见青天守得云开见明月。
+              </p>
+            </div>
+            <div
+              style="height: 275px; border-radius: 2px; padding: 10px"
+              class="baiSe3 mgt8 yinYing flex wenZisZ"
+            >
+              <p>
+                <img
+                  width="350px"
+                  ;
+                  height="200px"
+                  src="lieBiao4.png"
+                  alt="xingkong"
+                />
+              </p>
+
+              <p style="color: rgb(70, 71, 68); text-indent: 2em">
+                1，关于友情和爱情，高质量的社交不在多而在精。人类的智力将允许人类拥有稳定的社交网络的人数是148人。再好的朋友如果平时不走动和沟通也会成为陌生人。再深情的海誓山盟都不如花时间去陪伴。人一辈子值得深交的亲朋好友大概也就十几个人这十几个人的关系处理好了一辈子都会生活的顺利。大多数人可能说不出什么是爱但几乎每一个人都能够感知自己是否快乐幸福，都能区分温情和冷漠的差异不要等到失去了才怀念起那种幸福的可贵趁着感情在，趁着两个人还在共享一个时空好好珍惜吧！
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- 右区 -->
+        <div style="flex: 1" class="flex column mgr8 mgt8 youQu">
+          <br />
+          <!-- 提示区 -->
+          <div
+            style="height: 180px; border-radius: 2px; padding: 15px"
+            class="baiSe2 yinYing wenZis"
+          >
+            <h2 style="color: rgb(70, 71, 68); text-indent: 2em">
+              与其心生敬佩，不如自己就是那样的人
+            </h2>
+          </div>
+          <!-- 消息区 -->
+          <div
+            style="height: 300px; border-radius: 2px"
+            class="baiSe2 mgt8 yinYing"
+          >
+            <h2 style="color: rgb(70, 71, 68)" class="biaoTi">每日任务清单</h2>
+            <li style="color: rgb(70, 71, 68); text-indent: 1em">
+              根据短期目标进度对每天进行合理安排。
+            </li>
+            <li style="color: rgb(70, 71, 68); text-indent: 1em">
+              清单项目要保证其合理性，可完成性。
+            </li>
+            <li style="color: rgb(70, 71, 68); text-indent: 1em">
+              奖励机制 思考怎样做能够增加完成清单的满足感和成就感
+            </li>
+          </div>
+          <div
+            style="height: 550px; border-radius: 2px"
+            class="baiSe2 mgt8 yinYing"
+          >
+            <h2 style="color: rgb(70, 71, 68)" class="biaoTi">
+              人在临终前最后悔的事
+            </h2>
+            <br />
+            <li style="color: rgb(70, 71, 68); text-indent: 1em">
+              我希望当初我有勇气过自己想要的生活，而不是别人希望我过的，
+              做想做的事，去想去的地方，爱所爱的人。
+            </li>
+            <br />
+            <li style="color: rgb(70, 71, 68); text-indent: 1em">
+              我希望当初能有勇气表达我的感受，让自己活的开心一点。
+            </li>
+            <br />
+            <li style="color: rgb(70, 71, 68); text-indent: 1em">
+              我希望当初我没有花这么多的精力，去做我不感兴趣的工作。
+            </li>
+            <br />
+            <li style="color: rgb(70, 71, 68); text-indent: 1em">
+              我希望当初我能和朋友保持联系，帮助别人对深爱的人表达谢意，不去做对不起良心的事。
+            </li>
+            <br />
+            <li style="color: rgb(70, 71, 68); text-indent: 1em">
+              我希望当初我能把更多的精力放在自身的健康上，让我有足够的时间去实现我的理想。
+            </li>
+            <br />
+            <li style="color: rgb(70, 71, 68); text-indent: 1em">
+              我希望当初我能够空出更多的时间陪伴在父母身边，给他们带来更多的幸福和温暖。
+            </li>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
